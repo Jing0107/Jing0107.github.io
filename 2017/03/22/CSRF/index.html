@@ -3,14 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>CSRF | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="CSRF简介CSRF攻击是攻击者利用用户身份操作用户账户的一种攻击方式。
+CSRF的本质CSRF为什么可以攻击成功？本质原因是重要操作的所有参数都是可以被攻击者猜测到的。只有知道url的所有参数与参数值，才能成功地构造一个伪造的请求。
+CSRF的防御
+验证码
+
+验证码被认为是对抗csrf攻击最简洁有效的防御方法。强制用户必须与应用进行交互，完成最终请求，但是有时候出于用户体验好而不设置验证码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSRF">
+<meta property="og:url" content="http://yoursite.com/2017/03/22/CSRF/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSRF简介CSRF攻击是攻击者利用用户身份操作用户账户的一种攻击方式。
+CSRF的本质CSRF为什么可以攻击成功？本质原因是重要操作的所有参数都是可以被攻击者猜测到的。只有知道url的所有参数与参数值，才能成功地构造一个伪造的请求。
+CSRF的防御
+验证码
+
+验证码被认为是对抗csrf攻击最简洁有效的防御方法。强制用户必须与应用进行交互，完成最终请求，但是有时候出于用户体验好而不设置验证码。">
+<meta property="og:updated_time" content="2017-03-23T01:57:18.879Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="CSRF">
+<meta name="twitter:description" content="CSRF简介CSRF攻击是攻击者利用用户身份操作用户账户的一种攻击方式。
+CSRF的本质CSRF为什么可以攻击成功？本质原因是重要操作的所有参数都是可以被攻击者猜测到的。只有知道url的所有参数与参数值，才能成功地构造一个伪造的请求。
+CSRF的防御
+验证码
+
+验证码被认为是对抗csrf攻击最简洁有效的防御方法。强制用户必须与应用进行交互，完成最终请求，但是有时候出于用户体验好而不设置验证码。">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,54 +78,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/22/hello-world/" class="article-date">
-  <time datetime="2017-03-22T09:52:52.622Z" itemprop="datePublished">2017-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/22/hello-world/" data-id="cj0lqzyl700011gt6a7cpo2sh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSRF" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-CSRF" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/22/CSRF/" class="article-date">
   <time datetime="2017-03-22T07:24:47.000Z" itemprop="datePublished">2017-03-22</time>
@@ -119,8 +91,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/22/CSRF/">CSRF</a>
+    <h1 class="article-title" itemprop="name">
+      CSRF
     </h1>
   
 
@@ -172,10 +144,23 @@ token要保证足够的随机
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/22/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
+</article>
 
 </section>
         
